@@ -21,6 +21,6 @@ jobs:
           echo "Running tests"
           echo "THE HEAD BRANCH: "
           echo "$GITHUB_HEAD_REF"
-          if [[ "$GITHUB_HEAD_REF" -ne "test" ]]; then
+          if [[ "$GITHUB_HEAD_REF" != "test" ]]; then
               exit 1
           fi
