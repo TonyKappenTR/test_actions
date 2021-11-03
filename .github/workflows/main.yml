@@ -20,6 +20,7 @@ jobs:
       - run: |
           echo "Running tests"
           sourceBranch=${GITHUB_REF##*/}
+          echo "$sourceBranch"
           if [[ "$sourceBranch" -ne "test" ]]; then
               exit 1
           fi
