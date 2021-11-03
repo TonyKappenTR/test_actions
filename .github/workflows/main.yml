@@ -19,9 +19,8 @@ jobs:
     steps:
       - run: |
           echo "Running tests"
-          sourceBranch=${GITHUB_REF##*/}
-          echo "$sourceBranch"
-          if [[ "$sourceBranch" -ne "test" ]]; then
-            echo "A PR TO MASTER CAN ONLY BE MADE FROM TEST"
-            exit 1
+          echo "THE HEAD BRANCH: "
+          echo "$GITHUB_HEAD_REF"
+          if [[ "$GITHUB_HEAD_REF" -ne "test" ]]; then
+              exit 1
           fi
