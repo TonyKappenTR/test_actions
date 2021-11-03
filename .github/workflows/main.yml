@@ -22,5 +22,6 @@ jobs:
           sourceBranch=${GITHUB_REF##*/}
           echo "$sourceBranch"
           if [[ "$sourceBranch" -ne "test" ]]; then
-              exit 1
+            echo "A PR TO MASTER CAN ONLY BE MADE FROM TEST"
+            exit 1
           fi
