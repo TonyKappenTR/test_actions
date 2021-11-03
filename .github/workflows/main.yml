@@ -19,8 +19,8 @@ jobs:
     steps:
       - run: |
           echo "Running tests"
-          $sourceBranch = ${GITHUB_REF##*/}
-          if($sourceBranch -ne "test")
+          sourceBranch=${GITHUB_REF##*/}
+          if("$sourceBranch" -ne "test")
           {
               exit 1
           }
