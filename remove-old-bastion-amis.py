@@ -26,7 +26,7 @@ response = lambda_client.invoke(
 )
 body = json.loads(response['Payload'].read().decode('utf-8'))
 print(body)
-client = boto3.client('ec2',region='us-east-1')
+client = boto3.client('ec2',region_name='us-east-1')
 # def create_change_request():
 #     account_number=""
 #     if ENV == 'prod':
