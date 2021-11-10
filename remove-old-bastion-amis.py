@@ -22,7 +22,7 @@ payload={
 }
 response = lambda_client.invoke(
     FunctionName='arn:aws:lambda:us-east-1:142227596713:function:a205257-testing',
-    Payload=bytes(json.dumps(payload))
+    Payload=bytes(json.dumps(payload),'utf-8')
 )
 print(response)
 # def create_change_request():
