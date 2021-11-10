@@ -24,7 +24,9 @@ response = lambda_client.invoke(
     FunctionName='arn:aws:lambda:us-east-1:142227596713:function:a205257-testing',
     Payload=bytes(json.dumps(payload),'utf-8')
 )
-print(response)
+body = json.loads(response['Payload'].read().decode('utf-8'))
+print(body)
+client = boto3.client('ec2',region='us-east-1')
 # def create_change_request():
 #     account_number=""
 #     if ENV == 'prod':
